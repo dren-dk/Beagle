@@ -5,12 +5,12 @@
   <repositories>
   </repositories>
 
-  <groupId>dk.dren.dwa</groupId>
-  <artifactId>dropwizard-angular-seed</artifactId>
+  <groupId>dk.dren.beagle</groupId>
+  <artifactId>beagled</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Dropwizard meets AngularJS</name>
-  <url></url>
-  <description>This is a simple Dropwizard server with AngularJS via webjars</description>
+  <name>Beagle</name>
+  <url>https://beagle.osaa.dk</url>
+  <description>Simple burger ordering system</description>
   
   <properties>
     <!-- use UTF-8 for everything -->
@@ -38,6 +38,11 @@
       <dependency>
           <groupId>io.dropwizard</groupId>
           <artifactId>dropwizard-assets</artifactId>
+          <version>${dropwizard.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>io.dropwizard</groupId>
+          <artifactId>dropwizard-jdbi</artifactId>
           <version>${dropwizard.version}</version>
       </dependency>
 <!--
@@ -73,6 +78,12 @@ Not releasded yet and I don't want to depend on a locally compiled artifact, so 
           <version>2.4</version>
       </dependency>
 
+      <!-- http://mvnrepository.com/artifact/org.postgresql/postgresql -->
+      <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>9.4.1208</version>
+      </dependency>
 
       <dependency>
           <groupId>org.webjars.bower</groupId>
@@ -104,6 +115,13 @@ Not releasded yet and I don't want to depend on a locally compiled artifact, so 
           <artifactId>bootstrap</artifactId>
           <version>3.3.6</version>
       </dependency>
+
+      <!-- http://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+    <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>jquery</artifactId>
+        <version>2.2.4</version>
+    </dependency>
 
   </dependencies>
 	
@@ -148,7 +166,7 @@ Not releasded yet and I don't want to depend on a locally compiled artifact, so 
 	      <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>dk.dren.dwa.Server</mainClass>
+                  <mainClass>dk.dren.beagle.Server</mainClass>
                 </transformer>
 	      </transformers>
 	    </configuration>
@@ -169,24 +187,6 @@ Not releasded yet and I don't want to depend on a locally compiled artifact, so 
 	</configuration>
       </plugin>
       
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-eclipse-plugin</artifactId>
-        <configuration>
-          <downloadSources>true</downloadSources>
-          <downloadJavadocs>true</downloadJavadocs>
-        </configuration>
-      </plugin>
-<!-- For some reason the plugin throws exceptions if I do this:
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-idea-plugin</artifactId>
-            <configuration>
-                <downloadSources>true</downloadSources>
-                <downloadJavadocs>true</downloadJavadocs>
-            </configuration>
-        </plugin>
-        -->
     </plugins>
   </build>
 </project>

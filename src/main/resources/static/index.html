@@ -2,49 +2,79 @@
 <html lang="en" ng-app>
 <head>
   <meta charset="utf-8">
-  <title>Dropwizard+AngularJS</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beagle: Open Burger Operating System</title>
 
   <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/dist/css/bootstrap.css">
   <script src="/webjars/bootstrap/3.3.6/dist/js/bootstrap.js"></script>
+
+  <script src="/webjars/angular/1.5.0/angular.js"></script>
+
+  <link rel="stylesheet" href="/static/css/app.css">
 </head><body>
 
-    <h1>Dropwizard+AngularJS</h1>
-    <p>Welcome to my dropwizard + angular + webjars seed project, this project is a mix of:</p>
-    <ul>
-        <li><a href="http://www.dropwizard.io/0.9.2/docs/getting-started.html">The Dropwizard tutorial</a></li>
-        <li><a href="https://docs.angularjs.org/tutorial/">The AngularJS tutorial</a></li>
-        <li>Example of how to inject singletons and per-request objects using hk2</li>
-        <li>Example of how to use webjars rather than rely on The Entire Internet for your client side library needs as the
-          Javascript folks like to do, which is strangely hard to find example code for.</li>
-    </ul>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
 
-    <p>The intention is that this project is simple enough to allow you to understand why everything is here and to allow
-        you to simply copy the project and use it as a starting point for a new dropwizard project, it's not aiming to show
-        off all dropwizard or angular features or even serve as an example of "The Right Way" of doing things.</p>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Beagle</h1>
+        <p>Welcome to Beagle, the friendly burger ordering app</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Create Order &raquo;</a></p>
+      </div>
+    </div>
 
-    <h2>Contents of the web scope</h2>
-    <ul>
-        <li><a href="/swagger/">/swagger/</a>: Swagger</li>
-        <li><a href="/admin/">/admin/</a>: Dropwizard admin, note that a real, public server should have admin living on a separate, firewalled port</li>
-        <li><a href="/static/">/static/</a>: Static files served from the classpath, see resources/static/ in the source tree.</li>
-        <li>/webjars/: Webjars</li>
-        <li><a href="/">/</a>: This front page is a static file that normally lives at /static/index.html and would be served as via the assetbundle for /static/, but as that's an ugly uri to expose, I've set up a very simple resource to serve it via / too</li>
-        <li><a href="/hello/">/hello/</a>: A very simple hello-world resource, check it out via swagger or just hit: <a href="/hello/text/there">/hello/text/there</a>, <a href="/hello/text/world">/hello/text/world</a> or <a href="/hello/text/you">/hello/text/you</a></li>
-        <li>Having the different parts of the app live in separate subdirs like this allow new resources, like REST services to be hooked up everywhere else in the web scope, which is what I like to do, but it's also possible to do it <a href="https://spin.atomicobject.com/2014/10/11/serving-static-assets-with-dropwizard/">the other way around and serve static files out of / and have the rest services limited to /api/</a>, though that would conflict with swagger.</li>
-    </ul>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Source</h2>
+          <p>Beagle is Open Source, patches are welcome</p>
+          <p><a class="btn btn-default" href="https://github.com/dren-dk/Beagle" role="button">View source &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 Flemming Frandsen.</p>
+      </footer>
+    </div> <!-- /container -->
 
 
-    <h2>Angular Tutorial</h2>
-    <p>As I work through the AngularJS tutorial I'll add the pages here, slightly adapted for my environment:</p>
-    <ul>
-        <li><a href="/static/angular/step_00.html">step 00: Bootstrapping</a></li>
-        <li><a href="/static/angular/step_02.html">step 02: Angular templates</a></li>
-        <li><a href="/static/angular/step_03.html">step 03: Filtering repeaters</a></li>
-        <li><a href="/static/angular/step_04.html">step 04: Two way databinding</a></li>
-        <li><a href="/static/angular/step_05.html">step 05: Finally a call to a REST service on the server so we can do some real work, rather than faffing about in the client</a></li>
-        <li><a href="/static/angular/step_06.html">step 06: images...</a></li>
-        <li><a href="/static/angular/step_07.html">step 07: Routing &amp; Multiple Views</a></li>
-    </ul>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/webjars/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <p>Nothing here {{'yet' + '!'}}</p>
 
 </body></html>
-

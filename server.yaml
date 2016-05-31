@@ -14,4 +14,4 @@ server:
     port: 8080
 
 swagger:
-  resourcePackage: dk.dren.dwa.resources
+  resourcePackage: dk.dren.beagle.resources
